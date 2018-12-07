@@ -1,23 +1,27 @@
 import React, { Component } from "react";
 import Collapsible from "react-collapsible";
+import Carousel from "nuka-carousel";
 
 import logo from "../../assets/images/logo.svg";
 import "./App.scss";
 
+import Navbar_mobile from "../../components/navbar_mobile/Navbar_mobile";
+
 class App extends Component {
   render() {
     const triggerStyle = {
-      display: 'flex',
-      alignItems: 'center',
-      width: '100%',
-      height: '80px',
-      fontFamily: 'Open Sans Bold',
-      fontSize: '20px',
-      letterSpacing: '1px',
-      margin: 'auto',
-      paddingLeft: '40px',
-      borderRadius: '5px 5px 0 0',
-    }
+      display: "flex",
+      alignItems: "center",
+      width: "100%",
+      height: "80px",
+      fontFamily: "Open Sans Bold",
+      fontSize: "20px",
+      letterSpacing: "1px",
+      margin: "auto",
+      paddingLeft: "40px",
+      borderRadius: "5px 5px 0 0"
+    };
+
     return (
       <div className="App">
         <div className="top-bar">
@@ -26,6 +30,11 @@ class App extends Component {
             ADVANTAGE OF OVER $5 MILLION WORTH OF TOTAL AWARDS
           </p>
         </div>
+        <Navbar_mobile>
+          <div className="logo-section-img">
+            <img src={logo} alt="logo" />
+          </div>
+        </Navbar_mobile>
         <div className="menu-bar">
           <div className="logo-section">
             <div className="logo-section-img">
@@ -64,8 +73,20 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="slider">
-          <img src={require("../../assets/images/slider-1.jpg")} alt="logo" />
+        <div className="slider-section">
+          <Carousel className="slider-content">
+            <img
+              className="img-content"
+              src={require("../../assets/images/slider-1.jpg")}
+              alt=""
+            />
+            <img
+              className="img-content"
+              src={require("../../assets/images/responsive.jpg")}
+              alt=""
+            />
+          </Carousel>
+          {/* <div className="slider-dot"></div> */}
         </div>
         <div className="logo-desc">
           <div className="logo-desc-logo">
@@ -73,15 +94,11 @@ class App extends Component {
           </div>
           <p>
             We believe that individual investors have paid excessive fees to
-            financial services institutions for too long.
-            <br />
-            Investor capital is fragmented, stripping investors of their
-            negotiating power. Access and information are
-            <br />
-            hard to come by and trust is at an all time low. We believe there is
-            a better way - one that empowers <br />
-            individual investors to achieve greater success. This is why we
-            built Empala.
+            financial services institutions for too long. Investor capital is
+            fragmented, stripping investors of their negotiating power. Access
+            and information are hard to come by and trust is at an all time low.
+            We believe there is a better way - one that empowers individual
+            investors to achieve greater success. This is why we built Empala.
           </p>
         </div>
         <div className="trust-section">
@@ -122,7 +139,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="memeber-section">
+        <div className="member-section">
           <div className="card">
             <div className="card-header color-green">
               Empowering <br />
@@ -371,26 +388,46 @@ class App extends Component {
             </div>
           </div>
           <div className="collapsible_list">
-            <Collapsible trigger="MARGIN" triggerTagName="div" triggerStyle={triggerStyle} contentOuterClassName="content">
+            <Collapsible
+              trigger="MARGIN"
+              triggerTagName="div"
+              triggerStyle={triggerStyle}
+              contentOuterClassName="content"
+              open={true}
+            >
               <span className="content">
-                Margin trading involves interest charges and risks, including the
-                potential to lose more than deposited or the need to deposit
+                Margin trading involves interest charges and risks, including
+                the potential to lose more than deposited or the need to deposit
                 additional collateral in a falling market. Before using margin,
-                customers must determine whether this type of trading strategy is
-                right for them given their specific investment objectives,
+                customers must determine whether this type of trading strategy
+                is right for them given their specific investment objectives,
                 experience, risk tolerance, and finanical situation. For more
                 information please see our Empala Margin Disclosure Statement,
-                Empala Margin Agreement and FINRA Margin Account Risk Information.
-                These disclosures contain information on Empala Securities' lending
-                policies, interest charges, and the risks associated with margin
-                accounts.
+                Empala Margin Agreement and FINRA Margin Account Risk
+                Information. These disclosures contain information on Empala
+                Securities' lending policies, interest charges, and the risks
+                associated with margin accounts.
               </span>
             </Collapsible>
-            <Collapsible trigger="ETFS" triggerTagName="div" triggerStyle={triggerStyle} contentOuterClassName="content">There is no content.</Collapsible>
-            <Collapsible trigger="ADDITIONAL RISKS & INFORMATION" triggerTagName="div" triggerStyle={triggerStyle} contentOuterClassName="content">There is no content.</Collapsible>
+            <Collapsible
+              trigger="ETFS"
+              triggerTagName="div"
+              triggerStyle={triggerStyle}
+              contentOuterClassName="content"
+            >
+              There is no content.
+            </Collapsible>
+            <Collapsible
+              trigger="ADDITIONAL RISKS & INFORMATION"
+              triggerTagName="div"
+              triggerStyle={triggerStyle}
+              contentOuterClassName="content"
+            >
+              There is no content.
+            </Collapsible>
           </div>
         </div>
-        
+
         <div className="footer">
           <div className="footer-nav-bar">
             <a href="">

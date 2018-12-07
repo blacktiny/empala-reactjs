@@ -1,4 +1,4 @@
-font-face {
+@font-face {
   font-family: "Open Sans";
   font-style: normal;
   color: #363b41;
@@ -33,9 +33,7 @@ font-face {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // width: 100vw;
-  width: 1370px;
-  margin: auto;
+  width: 100%;
   .top-bar {
     background-color: #323b42;
     height: 42px;
@@ -43,13 +41,20 @@ font-face {
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width:1024px) {
+      display: none;
+    }
     p {
       font-family: "Open Sans";
       color: white;
       font-size: 15px;
       letter-spacing: 2.1px;
+      margin: 0;
       span {
         color: #91b456;
+      }
+      @media (max-width: 1360px) {
+        font-size: 14px;
       }
     }
   }
@@ -61,6 +66,10 @@ font-face {
     width: 100%;
     height: 116px;
     background-color: #fbfbfb;
+    @media (max-width: 1024px) {
+      height: 70px;
+      display: none;
+    }
     .logo-section {
       display: flex;
       flex-direction: row;
@@ -69,9 +78,12 @@ font-face {
       }
       &-text {
         display: flex;
-        font-family: "Open Sans";
-        font-style: italic;
+        font-family: "Open Sans Italic";
+        font-size: 14px;
         align-items: center;
+        @media (max-width: 1360px) {
+          display: none;
+        }
       }
     }
     .btn-section {
@@ -86,6 +98,7 @@ font-face {
         justify-content: space-between;
         a {
           color: #333a40;
+          font-family: "Open Sans Bold";
           font-size: 14px;
           text-decoration: none;
           margin: 0 20px;
@@ -98,48 +111,83 @@ font-face {
           width: 220px;
           height: 59px;
           font-family: "Open Sans";
-          font-size: 16px;
+          font-size: 15px;
+          text-transform: uppercase;
           color: white;
           border-radius: 10px;
+          letter-spacing: 1px;
           background-color: #96c930;
         }
       }
     }
   }
-  .slider {
+  .slider-section {
     display: flex;
     justify-content: center;
+    width: 100%;
+    .slider-content {
+      height: 100%;
+      width: 100%;
+      .img-content {
+        width: 100%;
+        height: 620px;
+        background-size: cover;
+        background-position: center;
+        background: url('../../assets/images/dot.png');
+      }
+    }
+    .slider-dot {
+      width: 100%;
+      height: 620px;
+      opacity: 0.2;
+      position: absolute;
+      background: url('../../assets/images/dot.png');
+    }
   }
   .logo-desc {
     display: flex;
     align-items: center;
     flex-direction: column;
     height: 253px;
+    @media (max-width: 1024px) {
+      height: auto; 
+    }
     &-logo {
       width: 250px;
       height: 38px;
-      margin-left: 56px;
-      margin-top: 26px;
+      margin: 26px 0;
     }
     &-img {
       width: 100%;
       height: 100%;
     }
     p {
+      width: 1200px;
       text-align: center;
       color: #34393f;
+      // font-family: "Open Sans";
       font-size: 24px;
       line-height: 33px;
+      @media (max-width: 1360px) {
+        width: 1026px;
+        font-size: 22px;
+      }
+      @media (max-width:1190px) {
+        width: 900px;
+      }
+      @media (max-width:1024px) {
+        width: 80%;
+      }
     }
   }
   .trust-section {
+    width: 100%;
     background: #fafafa;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
     padding-bottom: 44px;
-    width: 100%;
     margin-left: auto;
     margin-right: auto;
     clip-path: polygon(
@@ -148,6 +196,10 @@ font-face {
       calc(100% - 87px) 100%,
       87px 100%
     );
+    @media (max-width:1360px) {
+      padding-top: 15px;
+      padding-bottom: 35px;
+    }
     .mark {
       margin-top: 5px;
       &-img {
@@ -155,12 +207,27 @@ font-face {
       }
     }
     .text-content {
+      width: 100%;
+      h3 {
+        width: calc(100% - 174px);
+        font-family: "Open Sans Extra Bold";
+        font-size: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 10px auto;
+        text-align: center;
+        @media (max-width: 1360px) {
+          font-size: 45px;
+        }
+      }
       p {
         font-family: "Open Sans Bold";
         font-size: 21px;
         text-align: center;
         letter-spacing: 0.2px;
         color: #323b42;
+        margin: 16px 0;
       }
     }
   }
@@ -170,8 +237,23 @@ font-face {
     align-items: center;
     padding-top: 49px;
     padding-bottom: 46px;
+    @media (max-width:1360px) {
+      padding-top: 39px;
+      padding-bottom: 35px;
+    }
+    @media (max-width:1024px) {
+      padding: 0;
+      width: 100%;
+    }
     .fees-window {
       min-width: 1009px;
+      @media (max-width:1070px) {
+        min-width: 980px;
+      }
+      @media (max-width:1024px) {
+        width: 80%;
+        min-width: auto;
+      }
       &-header {
         background: #323b42;
         color: #e9e9eb;
@@ -210,15 +292,21 @@ font-face {
       }
     }
   }
-  .memeber-section {
+  .member-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: #f9f9f9;
     width: 80%;
-    height: 290px;
     margin: auto;
     padding: 52px 0px 48px 0px;
+    @media (max-width:1360px) {
+      padding: 39px 0px 35px 0px;
+    }
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      height: auto;
+    }
     .card {
       display: flex;
       flex-direction: column;
@@ -227,6 +315,10 @@ font-face {
       background-color: #ffffff;
       border-radius: 15px 15px 0px 0px;
       margin: 0 27.5px;
+      @media (max-width: 1024px) {
+        width: 100%;
+        margin: 20px 0;
+      }
       &-header {
         width: 100%;
         height: 100px;
@@ -239,21 +331,30 @@ font-face {
         line-height: 32px;
         letter-spacing: 1px;
         text-align: center;
+        @media (max-width:1360px) {
+          font-size: 22px;
+        }
       }
       &-content {
-        // width: 100%;
         height: calc(100% - 100px);
         padding: 20px;
+        @media (max-width:1360px) {
+          padding: 10px;
+        }
         span {
           width: 100%;
           height: 100%;
           display: flex;
           align-items: center;
           justify-content: center;
-          // font-family: "Open Sans";
+          color: #323b42;
+          font-family: "Open Sans";
           font-size: 17px;
           line-height: 27px;
           text-align: center;
+          @media (max-width:1360px) {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -261,23 +362,27 @@ font-face {
   .join-section {
     margin-top: 50px;
     width: 100%;
+    @media (max-width:1360px) {
+      margin-top: 35px;
+    }
     &-header {
       background: #fafafa;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 20px;
-      padding-bottom: 44px;
       width: 100%;
-      height: 230px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 20px 0 0 0;
+      margin: 0 auto 44px;
       clip-path: polygon(
         52px 0,
         calc(100% - 52px) 0,
         calc(100% - 87px) 100%,
         87px 100%
       );
+      @media (max-width:1360px) {
+        padding: 15px 0 0 0;
+        margin: 0 0 35px 0;
+      }
       .mark {
         margin-top: 5px;
         &-img {
@@ -285,6 +390,20 @@ font-face {
         }
       }
       .text-content {
+        width: 100%;
+        h3 {
+          width: calc(100% - 174px);
+          font-family: "Open Sans Extra Bold";
+          font-size: 50px;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin: 10px auto;
+          text-align: center;
+          @media (max-width: 1360px) {
+            font-size: 45px;
+          }
+        }
         p {
           font-family: "Open Sans Bold";
           font-size: 21px;
@@ -297,6 +416,18 @@ font-face {
     .image-content {
       display: flex;
       justify-content: center;
+      margin-top: 50px;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      @media (max-width:1360px) {
+        margin-top: 20px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: 1050px;
+      }
     }
     .card-section {
       display: flex;
@@ -305,36 +436,62 @@ font-face {
       margin: auto;
       background: #fafafa;
       margin-top: 70px;
-      padding: 50px 40px 0px 40px;
+      padding: 50px 40px 0 40px;
+      @media (max-width:1360px) {
+        margin-top: 30px;
+        padding: 35px 40px 0;
+      }
       &-upper {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 25px;
+        @media (max-width:1024px) {
+          flex-direction: column;
+          margin-bottom: 0;
+        }
       }
       .card {
         display: flex;
         flex-direction: column;
-        height: 460px;
         width: 27%;
         background: white;
         border-radius: 20px 20px 0 0;
         margin: 0 40px;
+        @media (max-width:1360px) {
+          width: 29%;
+          margin: 0 20px;
+        }
+        @media (max-width:1024px) {
+          width: 100%;
+          height: auto;
+          margin: 20px 0;
+        }
         &-header {
           width: 100%;
-          height: 60px;
+          min-height: 60px;
           display: flex;
           align-items: center;
           justify-content: center;
           font-family: "Open Sans Extra Bold";
           font-size: 23px;
           text-transform: uppercase;
+          @media (max-width:1360px) {
+            min-height: 55px;
+            font-size: 21px;
+          }
         }
         &-logo {
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 100px;
+          min-height: 100px;
+          @media (max-width:1360px) {
+            min-height: 90px;
+            img {
+              width: 55px;
+            }
+          }
         }
         &-title {
           text-align: center;
@@ -343,15 +500,21 @@ font-face {
             font-family: "Open Sans Bold";
             font-size: 20px;
             margin: 10px 0;
+            @media (max-width:1360px) {
+              font-size: 18px;
+            }
           }
         }
         &-content {
           text-align: center;
           padding: 0 30px 0 30px;
           p {
-            // font-family: "Open Sans";
+            font-family: "Open Sans";
             font-size: 16px;
             margin: 20px 0;
+            @media (max-width:1360px) {
+              font-size: 14px;
+            }
           }
         }
       }
@@ -361,29 +524,40 @@ font-face {
         justify-content: space-evenly;
         margin-top: 25px;
         margin-bottom: 50px;
+        @media (max-width:1360px) {
+          margin: 0 0 35px;
+        }
+        @media (max-width:1024px) {
+          flex-direction: column;
+          width: 100%;
+          margin: 0;
+        }
       }
     }
   }
   .legal-section {
     margin-top: 50px;
     width: 100%;
+    @media (max-width:1360px) {
+      margin-top: 35px;
+    }
     &-header {
-      background: #fafafa;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 20px;
-      padding-bottom: 44px;
       width: 100%;
-      height: 100px;
-      margin-left: auto;
-      margin-right: auto;
+      background: #fafafa;
+      padding: 20px 0 44px 0;
+      margin: 0 auto;
       clip-path: polygon(
         52px 0,
         calc(100% - 52px) 0,
         calc(100% - 87px) 100%,
         87px 100%
       );
+      @media (max-width: 1360px) {
+        padding: 15px 0 30px 0;
+      }
       .mark {
         margin-top: 5px;
         &-img {
@@ -391,12 +565,19 @@ font-face {
         }
       }
       .text-content {
-        p {
-          font-family: "Open Sans Bold";
-          font-size: 21px;
+        width: 100%;
+        h3 {
+          width: calc(100% - 174px);
+          font-family: "Open Sans Extra Bold";
+          font-size: 50px;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin: 10px auto;
           text-align: center;
-          letter-spacing: 0.2px;
-          color: #323b42;
+          @media (max-width: 1360px) {
+            font-size: 45px;
+          }
         }
       }
     }
@@ -405,13 +586,16 @@ font-face {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin-top: 50px;
       .text-upper {
         width: 80%;
+        font-family: "Open Sans";
         font-size: 18px;
         line-height: 30px;
         margin-bottom: 40px;
       }
       span {
+        font-family: "Open Sans";
         text-decoration: underline;
       }
       .text-lower {
@@ -420,17 +604,29 @@ font-face {
         width: 80%;
         margin-bottom: 50px;
         justify-content: space-between;
+        @media (max-width:1024px) {
+          flex-direction: column;
+          margin-bottom: 20px;
+        }
         &-leftside {
           width: 47%;
+          font-family: "Open Sans";
           font-size: 18px;
           line-height: 30px;
           margin-bottom: 40px;
+          @media (max-width:1024px) {
+            width: 100%;
+          }
         }
         &-rightside {
           width: 47%;
+          font-family: "Open Sans";
           font-size: 18px;
           line-height: 30px;
           margin-bottom: 40px;
+          @media (max-width:1024px) {
+            width: 100%;
+          }
         }
       }
     }
@@ -452,8 +648,12 @@ font-face {
       justify-content: space-between;
       background: #fbfbfb;
       padding: 0 95px;
+      @media (max-width: 1024px) {
+        display: none;
+      }
       a {
         color: #333a40;
+        font-family: "Open Sans Bold";
         font-size: 12px;
         text-decoration: none;
         margin: 0 15px;
@@ -462,6 +662,7 @@ font-face {
     }
     &-text {
       display: flex;
+      font-family: "Open Sans";
       align-items: center;
       justify-content: center;
       height: 50px;
@@ -479,6 +680,9 @@ font-face {
   flex-direction: column;
   width: 60%;
   margin: 10px auto;
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
 }
 div.Collapsible__trigger {
   color: #323b42;
@@ -494,23 +698,14 @@ div.Collapsible__trigger.is-open {
 }
 div.Collapsible__contentOuter.content {
   background: #fafafa;
-  width: calc(100% + 40px);
+  width: 100%;
+  border-left: 1px solid #dfdfdf;
 }
 div.Collapsible__contentInner {
   font-family: "Open Sans Bold";
   font-size: 18px;
   line-height: 26px;
   margin: 25px 50px;
-}
-
-h3 {
-  font-family: "Open Sans Extra Bold";
-  font-size: 50px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 2px 0;
-  text-align: center;
 }
 
 .color {
