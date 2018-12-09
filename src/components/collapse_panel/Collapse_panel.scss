@@ -1,0 +1,71 @@
+.collapse-panel {
+  width: 100%;
+}
+.Collapsible {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin: 10px auto;
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+}
+div.Collapsible__trigger {
+  color: #323b42;
+  border: 1px solid #323b42;
+}
+div.Collapsible__trigger.is-closed {
+  color: #323b42;
+  background: #fafafa;
+  font-family: "Open Sans Bold";
+}
+div.Collapsible__trigger.is-open {
+  color: #fafafa;
+  background: #323b42;
+  font-family: "Open Sans";
+}
+div.Collapsible__contentOuter.content {
+  background: #fafafa;
+  width: 100%;
+  border-left: 3px solid #dfdfdf;
+}
+div.Collapsible__contentInner {
+  color: #323b42;
+  font-family: "Open Sans";
+  font-size: 19px;
+  line-height: 30px;
+  margin: 25px 50px;
+}
+.trigger-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  span {
+    text-transform: uppercase;
+  }
+  .btn-section {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    background: #91b456;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../assets/images/arrow-up.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 14px;
+  }
+}
+div.Collapsible__trigger.is-closed {
+  .btn-section {
+    background: transparent;
+    border: 2px solid #323b42;
+    background-image: url('../../assets/images/arrow-down.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 14px;
+  }
+}

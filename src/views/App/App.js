@@ -1,27 +1,15 @@
 import React, { Component } from "react";
-import Collapsible from "react-collapsible";
-import Carousel from "nuka-carousel";
+import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
+import RBCarousel from "react-bootstrap-carousel";
 
 import logo from "../../assets/images/logo.svg";
 import "./App.scss";
 
 import Navbar_mobile from "../../components/navbar_mobile/Navbar_mobile";
+import Collapse_panel from "../../components/collapse_panel/Collapse_panel";
 
 class App extends Component {
   render() {
-    const triggerStyle = {
-      display: "flex",
-      alignItems: "center",
-      width: "100%",
-      height: "80px",
-      fontFamily: "Open Sans Bold",
-      fontSize: "20px",
-      letterSpacing: "1px",
-      margin: "auto",
-      paddingLeft: "40px",
-      borderRadius: "5px 5px 0 0"
-    };
-
     return (
       <div className="App">
         <div className="top-bar">
@@ -37,8 +25,8 @@ class App extends Component {
         </Navbar_mobile>
         <div className="menu-bar">
           <div className="logo-section">
-            <div className="logo-section-img">
-              <img src={logo} alt="logo" />
+            <div className="logo-section-logo">
+              <img className="logo-section-img" src={logo} alt="logo" />
             </div>
             <span className="logo-section-text">
               Join Together, Invest Together, Succeed Together
@@ -74,19 +62,45 @@ class App extends Component {
           </div>
         </div>
         <div className="slider-section">
-          <Carousel className="slider-content">
-            <img
-              className="img-content"
-              src={require("../../assets/images/slider-1.jpg")}
-              alt=""
-            />
-            <img
-              className="img-content"
-              src={require("../../assets/images/responsive.jpg")}
-              alt=""
-            />
-          </Carousel>
-          {/* <div className="slider-dot"></div> */}
+          <RBCarousel
+            animation={true}
+            autoplay={false}
+            slideshowSpeed={2000}
+            // leftIcon={leftIcon}
+            // rightIcon={rightIcon}
+            onSelect={this.onSelect}
+            ref={r => (this.slider = r)}
+            version={4}
+          >
+            <div className="slider-content">
+              <img
+                style={{ width: "100%", height: "100%" }}
+                src={require("../../assets/images/slider-1.jpg")}
+                alt=""
+              />
+              <div className="slider-dot" />
+              <div className="carousel-center">
+                <div className="center-back" />
+                <div className="center-content">Save More</div>
+              </div>
+              <div className="carousel-caption">
+                <div className="caption-content">
+                  <div className="green-line" />
+                  <div className="text-section">
+                    Join the Queue and Take Advantage <br /> of our New Member
+                    Offers
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="slider-content">
+              <img
+                style={{ width: "100%", height: "100%" }}
+                src={require("../../assets/images/slider-1.jpg")}
+                alt=""
+              />
+            </div>
+          </RBCarousel>
         </div>
         <div className="logo-desc">
           <div className="logo-desc-logo">
@@ -109,7 +123,7 @@ class App extends Component {
               alt=""
             />
           </div>
-          <div className="text-content">
+          <div className="header-content">
             <h3 className="title-text color-green">Trust</h3>
             <h3 className="description-text color-black">
               Is the ultimate measure of our success.
@@ -125,7 +139,7 @@ class App extends Component {
             <div className="fees-window-header">
               <p className="header-text">
                 Over an investor's lifetime just{" "}
-                <span className="color-green extra-bold-text">1%</span>
+                <span className="color-green extra-bold-text">1% </span>
                 in excess fees can cost as much as{" "}
                 <span className="color-green extra-bold-text">50%</span> in lost
                 returns
@@ -146,11 +160,9 @@ class App extends Component {
               Our Members
             </div>
             <div className="card-content">
-              <span>
-                Technology and scale allows us to pass the previously high
-                profit margins of incumbents on to our members and to
-                continously reduce their fees and increase their opportunities.
-              </span>
+              Technology and scale allows us to pass the previously high
+              profit margins of incumbents on to our members and to
+              continously reduce their fees and increase their opportunities.
             </div>
           </div>
           <div className="card">
@@ -159,11 +171,9 @@ class App extends Component {
               MEMBERS FIRST
             </div>
             <div className="card-content">
-              <span>
-                We place our investors and their capital at the center of the
-                financial ecosystem where they will receive proper value,
-                opportunity and control.
-              </span>
+              We place our investors and their capital at the center of the
+              financial ecosystem where they will receive proper value,
+              opportunity and control.
             </div>
           </div>
           <div className="card">
@@ -172,11 +182,9 @@ class App extends Component {
               OUR MEMBERS
             </div>
             <div className="card-content">
-              <span>
-                We believe in aligning our interests with our members' interests
-                and our revenues are fully transparent and fixed. We have
-                nothing to sell but our ability to facilitate.
-              </span>
+              We believe in aligning our interests with our members' interests
+              and our revenues are fully transparent and fixed. We have
+              nothing to sell but our ability to facilitate.
             </div>
           </div>
         </div>
@@ -189,7 +197,7 @@ class App extends Component {
                 alt=""
               />
             </div>
-            <div className="text-content">
+            <div className="header-content">
               <h3 className="title-text color-black">Join Together</h3>
               <h3 className="description-text color-black">
                 Invest Together. Succeed Together.
@@ -283,49 +291,57 @@ class App extends Component {
               </div>
             </div>
             <div className="card-section-lower">
-              <div className="card">
-                <div className="card-header color-green">Access</div>
-                <div className="card-logo">
-                  <img src={require("../../assets/images/access.svg")} alt="" />
+              <div className="card-section-lower-content">
+                <div className="card">
+                  <div className="card-header color-green">Access</div>
+                  <div className="card-logo">
+                    <img
+                      src={require("../../assets/images/access.svg")}
+                      alt=""
+                    />
+                  </div>
+                  <div className="card-title">
+                    <p className="color-black">
+                      Scale platform to provide greater opportunities
+                    </p>
+                  </div>
+                  <div className="card-content">
+                    <p className="color-black">
+                      Foster innovative deal origination & collaboration.
+                    </p>
+                    <p className="color-black">
+                      Provide unique P2P transactions opportunities.
+                    </p>
+                    <p className="color-black">
+                      Attract high-quality deal flow.
+                    </p>
+                  </div>
                 </div>
-                <div className="card-title">
-                  <p className="color-black">
-                    Scale platform to provide greater opportunities
-                  </p>
-                </div>
-                <div className="card-content">
-                  <p className="color-black">
-                    Foster innovative deal origination & collaboration.
-                  </p>
-                  <p className="color-black">
-                    Provide unique P2P transactions opportunities.
-                  </p>
-                  <p className="color-black">Attract high-quality deal flow.</p>
-                </div>
-              </div>
-              <div className="card">
-                <div className="card-header color-green">Operations</div>
-                <div className="card-logo">
-                  <img
-                    src={require("../../assets/images/operations.svg")}
-                    alt=""
-                  />
-                </div>
-                <div className="card-title">
-                  <p className="color-black">
-                    Empower members with technological and regulatory innovation
-                  </p>
-                </div>
-                <div className="card-content">
-                  <p className="color-black">
-                    Innovative fund structures & global broker-dealer network
-                  </p>
-                  <p className="color-black">
-                    Fully automated private market investment technologies.
-                  </p>
-                  <p className="color-black">
-                    Deigital token transaction rails on distributed ledgers.
-                  </p>
+                <div className="card">
+                  <div className="card-header color-green">Operations</div>
+                  <div className="card-logo">
+                    <img
+                      src={require("../../assets/images/operations.svg")}
+                      alt=""
+                    />
+                  </div>
+                  <div className="card-title">
+                    <p className="color-black">
+                      Empower members with technological and regulatory
+                      innovation
+                    </p>
+                  </div>
+                  <div className="card-content">
+                    <p className="color-black">
+                      Innovative fund structures & global broker-dealer network
+                    </p>
+                    <p className="color-black">
+                      Fully automated private market investment technologies.
+                    </p>
+                    <p className="color-black">
+                      Deigital token transaction rails on distributed ledgers.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -340,7 +356,7 @@ class App extends Component {
                 alt=""
               />
             </div>
-            <div className="text-content">
+            <div className="header-content">
               <h3 className="title-text color-black">Legal Disclaimers</h3>
             </div>
           </div>
@@ -388,43 +404,31 @@ class App extends Component {
             </div>
           </div>
           <div className="collapsible_list">
-            <Collapsible
-              trigger="MARGIN"
-              triggerTagName="div"
-              triggerStyle={triggerStyle}
-              contentOuterClassName="content"
-              open={true}
-            >
-              <span className="content">
-                Margin trading involves interest charges and risks, including
-                the potential to lose more than deposited or the need to deposit
-                additional collateral in a falling market. Before using margin,
-                customers must determine whether this type of trading strategy
-                is right for them given their specific investment objectives,
-                experience, risk tolerance, and finanical situation. For more
-                information please see our Empala Margin Disclosure Statement,
-                Empala Margin Agreement and FINRA Margin Account Risk
-                Information. These disclosures contain information on Empala
-                Securities' lending policies, interest charges, and the risks
-                associated with margin accounts.
-              </span>
-            </Collapsible>
-            <Collapsible
-              trigger="ETFS"
-              triggerTagName="div"
-              triggerStyle={triggerStyle}
-              contentOuterClassName="content"
-            >
-              There is no content.
-            </Collapsible>
-            <Collapsible
-              trigger="ADDITIONAL RISKS & INFORMATION"
-              triggerTagName="div"
-              triggerStyle={triggerStyle}
-              contentOuterClassName="content"
-            >
-              There is no content.
-            </Collapsible>
+            <Collapse_panel
+              header_text={"Margin"}
+              content_text={
+                "Margin trading involves interest charges and risks, including\
+                the potential to lose more than deposited or the need to deposit\
+                additional collateral in a falling market. Before using margin,\
+                customers must determine whether this type of trading strategy\
+                is right for them given their specific investment objectives,\
+                experience, risk tolerance, and finanical situation. For more\
+                information please see our Empala Margin Disclosure Statement,\
+                Empala Margin Agreement and FINRA Margin Account Risk\
+                Information. These disclosures contain information on Empala\
+                Securities' lending policies, interest charges, and the risks\
+                associated with margin accounts."
+              }
+              is_open={true}
+            />
+            <Collapse_panel
+              header_text={"ETFS"}
+              content_text={"There is no content."}
+            />
+            <Collapse_panel
+              header_text={"Additional Risks & Information"}
+              content_text={"There is no content."}
+            />
           </div>
         </div>
 
