@@ -10,6 +10,14 @@ import Collapse_panel from "../../components/collapse_panel/Collapse_panel";
 
 class App extends Component {
   render() {
+    let leftIcon = (
+      <div className="slider-arrow arrow-left"></div>
+    );
+
+    let rightIcon = (
+      <div className="slider-arrow arrow-right"></div>
+    );
+
     return (
       <div className="App">
         <div className="top-bar">
@@ -66,8 +74,8 @@ class App extends Component {
             animation={true}
             autoplay={false}
             slideshowSpeed={2000}
-            // leftIcon={leftIcon}
-            // rightIcon={rightIcon}
+            leftIcon={leftIcon}
+            rightIcon={rightIcon}
             onSelect={this.onSelect}
             ref={r => (this.slider = r)}
             version={4}
