@@ -3,72 +3,18 @@ import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import RBCarousel from "react-bootstrap-carousel";
 
 import logo from "../../assets/images/logo.svg";
-import "./App.scss";
+import "./home.scss";
 
-import Navbar_mobile from "../../components/navbar_mobile/Navbar_mobile";
 import Collapse_panel from "../../components/collapse_panel/Collapse_panel";
 
-class App extends Component {
+class Home extends Component {
   render() {
-    let leftIcon = (
-      <div className="slider-arrow arrow-left"></div>
-    );
+    let leftIcon = <div className="slider-arrow arrow-left" />;
 
-    let rightIcon = (
-      <div className="slider-arrow arrow-right"></div>
-    );
+    let rightIcon = <div className="slider-arrow arrow-right" />;
 
     return (
-      <div className="App">
-        <div className="top-bar">
-          <p>
-            <span>LIMITED TIME OFFER</span> - JOIN THE QUEUE NOW AND TAKE
-            ADVANTAGE OF OVER $5 MILLION WORTH OF TOTAL AWARDS
-          </p>
-        </div>
-        <Navbar_mobile>
-          <div className="logo-section-img">
-            <img src={logo} alt="logo" />
-          </div>
-        </Navbar_mobile>
-        <div className="menu-bar">
-          <div className="logo-section">
-            <div className="logo-section-logo">
-              <img className="logo-section-img" src={logo} alt="logo" />
-            </div>
-            <span className="logo-section-text">
-              Join Together, Invest Together, Succeed Together
-            </span>
-          </div>
-          <div className="btn-section">
-            <div className="nav-bar">
-              <a href="">
-                <b>TRUST</b>
-              </a>
-              <span>•</span>
-              <a href="">
-                <b>PRODUCT</b>
-              </a>
-              <span>•</span>
-              <a href="">
-                <b>PRICING</b>
-              </a>
-              <span>•</span>
-              <a href="">
-                <b>TEAM</b>
-              </a>
-              <span>•</span>
-              <a href="">
-                <b>CONTACT</b>
-              </a>
-            </div>
-            <div className="btn-reserve-section">
-              <button className="btn-reserve">
-                <b>Reserve Your Spot</b>
-              </button>
-            </div>
-          </div>
-        </div>
+      <div className="Home-main">
         <div className="slider-section">
           <RBCarousel
             animation={true}
@@ -83,13 +29,13 @@ class App extends Component {
             <div className="slider-content">
               <img
                 style={{ width: "100%", height: "100%" }}
-                src={require("../../assets/images/slider-1.jpg")}
+                src={require("../../assets/images/slider/slider-1.png")}
                 alt=""
               />
               <div className="slider-dot" />
               <div className="carousel-center">
                 <div className="center-back" />
-                <div className="center-content">Save More</div>
+                <div className="center-content slider1">Save More</div>
               </div>
               <div className="carousel-caption">
                 <div className="caption-content">
@@ -104,9 +50,42 @@ class App extends Component {
             <div className="slider-content">
               <img
                 style={{ width: "100%", height: "100%" }}
-                src={require("../../assets/images/slider-1.jpg")}
+                src={require("../../assets/images/slider/slider-2.png")}
                 alt=""
               />
+              <div className="slider-dot" />
+              <div className="carousel-center">
+                <div className="center-back" />
+                <div className="center-content slider2">Get Connected</div>
+              </div>
+              <div className="carousel-caption">
+                <div className="caption-content">
+                  <div className="green-line" />
+                  <div className="text-section">
+                    Join A Golobal Community <br /> That Gets You Access & Insight
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="slider-content">
+              <img
+                style={{ width: "100%", height: "100%" }}
+                src={require("../../assets/images/slider/slider-3.png")}
+                alt=""
+              />
+              <div className="slider-dot" />
+              <div className="carousel-center">
+                <div className="center-back" />
+                <div className="center-content slider3">All In One Place</div>
+              </div>
+              <div className="carousel-caption">
+                <div className="caption-content">
+                  <div className="green-line" />
+                  <div className="text-section">
+                    Everything You Need <br /> To Succeed
+                  </div>
+                </div>
+              </div>
             </div>
           </RBCarousel>
         </div>
@@ -168,9 +147,9 @@ class App extends Component {
               Our Members
             </div>
             <div className="card-content">
-              Technology and scale allows us to pass the previously high
-              profit margins of incumbents on to our members and to
-              continously reduce their fees and increase their opportunities.
+              Technology and scale allows us to pass the previously high profit
+              margins of incumbents on to our members and to continously reduce
+              their fees and increase their opportunities.
             </div>
           </div>
           <div className="card">
@@ -191,8 +170,8 @@ class App extends Component {
             </div>
             <div className="card-content">
               We believe in aligning our interests with our members' interests
-              and our revenues are fully transparent and fixed. We have
-              nothing to sell but our ability to facilitate.
+              and our revenues are fully transparent and fixed. We have nothing
+              to sell but our ability to facilitate.
             </div>
           </div>
         </div>
@@ -299,57 +278,55 @@ class App extends Component {
               </div>
             </div>
             <div className="card-section-lower">
-              <div className="card-section-lower-content">
-                <div className="card">
-                  <div className="card-header color-green">Access</div>
-                  <div className="card-logo">
-                    <img
-                      src={require("../../assets/images/access.svg")}
-                      alt=""
-                    />
-                  </div>
-                  <div className="card-title">
-                    <p className="color-black">
-                      Scale platform to provide greater opportunities
-                    </p>
-                  </div>
-                  <div className="card-content">
-                    <p className="color-black">
-                      Foster innovative deal origination & collaboration.
-                    </p>
-                    <p className="color-black">
-                      Provide unique P2P transactions opportunities.
-                    </p>
-                    <p className="color-black">
-                      Attract high-quality deal flow.
-                    </p>
-                  </div>
+              <div className="card">
+                <div className="card-header color-green">Access</div>
+                <div className="card-logo">
+                  <img
+                    src={require("../../assets/images/access.svg")}
+                    alt=""
+                  />
                 </div>
-                <div className="card">
-                  <div className="card-header color-green">Operations</div>
-                  <div className="card-logo">
-                    <img
-                      src={require("../../assets/images/operations.svg")}
-                      alt=""
-                    />
-                  </div>
-                  <div className="card-title">
-                    <p className="color-black">
-                      Empower members with technological and regulatory
-                      innovation
-                    </p>
-                  </div>
-                  <div className="card-content">
-                    <p className="color-black">
-                      Innovative fund structures & global broker-dealer network
-                    </p>
-                    <p className="color-black">
-                      Fully automated private market investment technologies.
-                    </p>
-                    <p className="color-black">
-                      Deigital token transaction rails on distributed ledgers.
-                    </p>
-                  </div>
+                <div className="card-title">
+                  <p className="color-black">
+                    Scale platform to provide greater opportunities
+                  </p>
+                </div>
+                <div className="card-content">
+                  <p className="color-black">
+                    Foster innovative deal origination & collaboration.
+                  </p>
+                  <p className="color-black">
+                    Provide unique P2P transactions opportunities.
+                  </p>
+                  <p className="color-black">
+                    Attract high-quality deal flow.
+                  </p>
+                </div>
+              </div>
+              <div className="card">
+                <div className="card-header color-green">Operations</div>
+                <div className="card-logo">
+                  <img
+                    src={require("../../assets/images/operations.svg")}
+                    alt=""
+                  />
+                </div>
+                <div className="card-title">
+                  <p className="color-black">
+                    Empower members with technological and regulatory
+                    innovation
+                  </p>
+                </div>
+                <div className="card-content">
+                  <p className="color-black">
+                    Innovative fund structures & global broker-dealer network
+                  </p>
+                  <p className="color-black">
+                    Fully automated private market investment technologies.
+                  </p>
+                  <p className="color-black">
+                    Deigital token transaction rails on distributed ledgers.
+                  </p>
                 </div>
               </div>
             </div>
@@ -435,42 +412,17 @@ class App extends Component {
             />
             <Collapse_panel
               header_text={"Additional Risks & Information"}
-              content_text={"There is no content."}
+              content_text={
+                "Investors should be aware that system response, execution price, speed, liquidity, market data, and account access times are affected by many factors, including market volatility, size and type of order, market conditions, system performance, and other factors. \
+              All investments involve risk and the past performance of a security, or financial product does not guarantee future results or returns. Keep in mind that while diversification may help spread risk it does not assure a profit, or protect against loss, in a down market. There is always the potential of losing money when you invest in securities, or other financial products. Investors should consider their investment objectives and risks carefully before investing. \
+              Third party advertising and information provided for product features, communications, and communications emanating from social media communities, market prices, data and other information available through Empala Group, LLC, Empala Securities, LLC or Empala Network, LLC are meant for informational purposes only and are not intended as an offer or solicitation for the purchase or sale of any financial instrument or as an official confirmation of any transaction. The information provided is not warranted as to completeness or accuracy and is subject to change without notice.  "
+              }
             />
           </div>
-        </div>
-
-        <div className="footer">
-          <div className="footer-nav-bar">
-            <a href="">
-              <b>Empala master customer agreement</b>
-            </a>
-            <span>•</span>
-            <a href="">
-              <b>Empala securities use and risk disclosures</b>
-            </a>
-            <span>•</span>
-            <a href="">
-              <b>disclosure library</b>
-            </a>
-            <span>•</span>
-            <a href="">
-              <b>privacy policy</b>
-            </a>
-            <span>•</span>
-            <a href="">
-              <b>contact us</b>
-            </a>
-            <span>•</span>
-            <a href="">
-              <b>faq</b>
-            </a>
-          </div>
-          <p className="footer-text">2018 © Copyright Empala Group LLC</p>
         </div>
       </div>
     );
   }
 }
 
-export default App;
+export default Home;

@@ -1,0 +1,200 @@
+.team-main {
+  .logo-desc {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media (max-width: 1024px) {
+      height: auto; 
+    }
+    &-logo {
+      width: 315px;
+      height: auto;
+      margin: 35px 0;
+      @media (max-width: 1360px) {
+        margin: 30px 0;
+      }
+      @media (max-width: 1024px) {
+        margin: 25px 0;
+      }
+      @media (max-width: 768px) {
+        width: 250px;
+        margin: 20px 0;
+      }
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+    }
+    p {
+      width: 85%;
+      text-align: center;
+      color: #34393f;
+      font-family: "Open Sans";
+      font-size: 31px;
+      line-height: 46px;
+      @media (max-width: 1360px) {
+        width: 1026px;
+        font-size: 22px;
+        line-height: 40px;
+      }
+      @media (max-width:1190px) {
+        width: 900px;
+      }
+      @media (max-width:1024px) {
+        width: 80%;
+      }
+      @media (max-width:768px) {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+  .header-content {
+    width: 100%;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 44px 0;
+    margin: 0 auto;
+    clip-path: polygon(
+      52px 0,
+      calc(100% - 52px) 0,
+      calc(100% - 87px) 100%,
+      87px 100%
+    );
+    @media (max-width:1360px) {
+      padding: 15px 0 35px 0;
+    }
+    @media (max-width:1360px) {
+      padding: 15px 0 20px 0;
+    }
+    @media (max-width:450px) {
+      clip-path: polygon(
+        34px 0,
+        calc(100% - 34px) 0,
+        calc(100% - 50px) 100%,
+        50px 100%
+      );
+    }
+    .mark {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+      background: transparent;
+      &-img {
+        width: 24px;
+      }
+    }
+    h3 {
+      width: calc(100% - 174px);
+      font-family: "Open Sans Extra Bold";
+      font-size: 62px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 10px auto;
+      text-align: center;
+      @media (max-width: 1360px) {
+        font-size: 45px;
+      }
+      @media (max-width: 768px) {
+        font-size: 40px;
+      }
+      @media (max-width: 576px) {
+        font-size: 35px;
+      }
+      @media (max-width: 450px) {
+        width: calc(100% - 87px);
+        font-size: 30px;
+      }
+    }
+  }
+  .member-section {
+    display: flex;
+    flex-direction: column;
+    padding: 65px 4% 0;
+    &-upper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-lower {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: calc((100% - 100px) / 2);
+      border-radius: 20px 20px 0 0;
+      border: none;
+      background: #fbfbfb;
+      padding: 30px;
+      margin: 40px 25px;
+      @media (max-width: 1024px) {
+        width: 85%;
+      }
+      img {
+        position: absolute;
+        margin: auto;
+        left: 30px;
+        top: -65px;
+      }
+      &-name {
+        display: flex;
+        font-family: "Open Sans Extra Bold";
+        font-size: 24px;
+        margin: 65px 0 2px 0;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+      &-role {
+        display: flex;
+        font-family: "Open Sans Bold";
+        font-size: 21px;
+        margin: 2px 0 5px 0;
+      }
+      &-intro {
+        display: flex;
+        font-family: "Open Sans";
+        font-size: 19px;
+        margin-top: 5px;
+      }
+      &-align {
+        img {
+          position: absolute;
+          margin: auto;
+          left: calc(50% - 65px);
+          top: -65px;
+        }
+        .card-name {
+          justify-content: center;
+          text-align: center;
+        }
+        .card-role {
+          justify-content: center;
+          text-align: center;
+        }
+        .card-intro {
+          justify-content: center;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+
+
+.color {
+  &-green {
+    color: #96c930;
+  }
+  &-black {
+    color: #323b42;
+  }
+}
