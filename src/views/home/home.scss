@@ -632,7 +632,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: calc((100%-120px) / 3);
+        width: calc(33% - 40px);
         border-radius: 15px 15px 0px 0px;
         margin: 0 27.5px;
         border: none;
@@ -722,7 +722,7 @@
       &-lower {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
         margin-top: 25px;
         margin-bottom: 50px;
         @media (max-width:1360px) {
@@ -733,19 +733,10 @@
           width: 100%;
           margin: 0;
         }
-        &-content {
-          width: calc(56% + 120px);
-          display: flex;
-          flex-direction: row;
+        .card {
+          width: calc(33% - 49px);
           @media (max-width:1024px) {
-            flex-direction: column;
-            width: 100%;
-          }
-          .card {
-            width: 50%;
-            @media (max-width:1024px) {
-              width: 90%;
-            }
+            width: 90%;
           }
         }
       }

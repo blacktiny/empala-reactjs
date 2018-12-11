@@ -2,7 +2,7 @@ import React from "react";
 
 import "./team.scss";
 
-import logo from "../../assets/images/logo.svg";
+import logo from "../../assets/images/logo.png";
 
 class Team extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class Team extends React.Component {
           </div>
           <p>
             Founded by passionate investors who share many of the frustrations
-            with the current financiall services industry and are committed to
+            with the current financial services industry and are committed to
             developing a better alternative.
           </p>
         </div>
@@ -28,7 +28,7 @@ class Team extends React.Component {
           </div>
           <h3 className="title-text color-black">
             Over a century of combined experience in finance, technology and
-            building successful companyies
+            building successful companies
           </h3>
         </div>
         <div className="member-section">

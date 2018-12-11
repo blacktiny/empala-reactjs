@@ -1,0 +1,113 @@
+.team_conditions-main {
+  .desc-section {
+    margin: 30px 0;
+    &-title {
+      width: 100%;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0 44px 0;
+      margin: 0 auto;
+      clip-path: polygon(
+        52px 0,
+        calc(100% - 52px) 0,
+        calc(100% - 87px) 100%,
+        87px 100%
+      );
+      @media (max-width:1360px) {
+        padding: 15px 0 35px 0;
+      }
+      @media (max-width:1360px) {
+        padding: 15px 0 20px 0;
+      }
+      @media (max-width:450px) {
+        clip-path: polygon(
+          34px 0,
+          calc(100% - 34px) 0,
+          calc(100% - 50px) 100%,
+          50px 100%
+        );
+      }
+      .mark {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        background: transparent;
+        &-img {
+          width: 24px;
+        }
+      }
+      h3 {
+        width: calc(100% - 174px);
+        font-family: "Open Sans Extra Bold";
+        font-size: 62px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 10px auto;
+        text-align: center;
+        @media (max-width: 1360px) {
+          font-size: 45px;
+        }
+        @media (max-width: 768px) {
+          font-size: 40px;
+        }
+        @media (max-width: 576px) {
+          font-size: 35px;
+        }
+        @media (max-width: 450px) {
+          width: calc(100% - 87px);
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 90px 20px;
+    @media (max-width: 1024px) {
+      padding: 0px 30px 20px;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      border-radius: 15px 15px 0 0;
+      padding: 15px 30px;
+      background-color: #fafafa;
+      border: none;
+      margin: 20px 0;
+      &-header {
+        display: flex;
+        align-items: center;
+        font-family: "Open Sans Bold";
+        font-size: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 15px 0;
+        border-bottom: 0;
+        background-color: transparent;
+      }
+      &-content {
+        p {
+          margin: 5px 0;
+          font-family: "Open Sans";
+          line-height: 28px;
+        }
+        .space-text {
+          height: 10px;
+        }
+      }
+    }
+  }
+}
+
+.color {
+  &-green {
+    color: #96c930;
+  }
+  &-black {
+    color: #323b42;
+  }
+}

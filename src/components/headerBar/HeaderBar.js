@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import './HeaderBar.scss';
 
@@ -8,7 +9,7 @@ class HeaderBar extends React.Component {
     <div className="headerbar">
       <div className="top-bar">
         <p>
-          <span>LIMITED TIME OFFER</span> - JOIN THE QUEUE NOW AND TAKE
+          <Link to="/foundingMember">LIMITED TIME OFFER</Link> - JOIN THE QUEUE NOW AND TAKE
           ADVANTAGE OF OVER $5 MILLION WORTH OF TOTAL AWARDS
         </p>
       </div>

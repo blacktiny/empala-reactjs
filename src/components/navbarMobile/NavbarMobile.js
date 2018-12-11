@@ -1,8 +1,8 @@
 import React from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-import logo from '../../assets/images/logo.svg';
-import './Navbar_mobile.scss';
+import logo from '../../assets/images/logo.png';
+import './NavbarMobile.scss';
 
 class Navbar_mobile extends React.Component {
   constructor(props) {
@@ -26,29 +26,39 @@ class Navbar_mobile extends React.Component {
     <div className="navbar-menu">
       <Navbar color="faded" light>
         <NavbarBrand href="/" className="mr-auto">
-          <div className="logo-section-img">
-            <img src={logo} alt="logo" />
+          <div className="logo-section">
+            <div className="logo-section-logo">
+              <img className="logo-section-img" src={logo} alt="logo" />
+            </div>
+            <span className="logo-section-text">
+              Join Together, Invest Together, Succeed Together
+            </span>
           </div>
         </NavbarBrand>
         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
         <Collapse isOpen={!this.state.collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/">TRUST</NavLink>
+              <NavLink href="/index#trust">TRUST</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/">PRODUCT</NavLink>
+              <NavLink href="/index#join">PRODUCT</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/">PRICING</NavLink>
+              <NavLink href="/pricingPage">PRICING</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/">TEAM</NavLink>
+              <NavLink href="/team">TEAM</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/">CONTACT</NavLink>
             </NavItem>
           </Nav>
+          <div className="btn-reserve-section">
+            <button className="btn-reserve">
+              <b>Reserve Your Spot</b>
+            </button>
+          </div>
         </Collapse>
       </Navbar>
     </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 import Collapsible from "react-collapsible";
 
-import './Collapse_panel.scss';
+import './CollapsePanel.scss';
 
-class Collapse_panel extends React.Component {
+class CollapsePanel extends React.Component {
   constructor(props) {
     super(props);
 
@@ -78,4 +78,4 @@ class Collapse_panel extends React.Component {
   }
 }
 
-export default Collapse_panel;
+export default CollapsePanel;

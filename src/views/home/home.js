@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import RBCarousel from "react-bootstrap-carousel";
 
-import logo from "../../assets/images/logo.svg";
+import logo from "../../assets/images/logo.png";
 import "./home.scss";
 
-import Collapse_panel from "../../components/collapse_panel/Collapse_panel";
+import CollapsePanel from "../../components/collapsePanel/CollapsePanel";
 
 class Home extends Component {
   render() {
@@ -70,7 +70,7 @@ class Home extends Component {
             <div className="slider-content">
               <img
                 style={{ width: "100%", height: "100%" }}
-                src={require("../../assets/images/slider/slider-3.png")}
+                src={require("../../assets/images/slider/slider-3.jpg")}
                 alt=""
               />
               <div className="slider-dot" />
@@ -82,7 +82,7 @@ class Home extends Component {
                 <div className="caption-content">
                   <div className="green-line" />
                   <div className="text-section">
-                    Everything You Need <br /> To Succeed
+                    Everything You Need To Succeed
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@ class Home extends Component {
             investors to achieve greater success. This is why we built Empala.
           </p>
         </div>
-        <div className="trust-section">
+        <div id='trust' className="trust-section">
           <div className="mark">
             <img
               className="mark-img"
@@ -116,7 +116,7 @@ class Home extends Component {
               Is the ultimate measure of our success.
             </h3>
             <p>
-              We will continously earn it in everything we do, and every way we
+              We will continuously earn it in everything we do, and every way we
               do it:
             </p>
           </div>
@@ -148,7 +148,7 @@ class Home extends Component {
             </div>
             <div className="card-content">
               Technology and scale allows us to pass the previously high profit
-              margins of incumbents on to our members and to continously reduce
+              margins of incumbents on to our members and to continuously reduce
               their fees and increase their opportunities.
             </div>
           </div>
@@ -175,7 +175,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="join-section">
+        <div id="join" className="join-section">
           <div className="join-section-header">
             <div className="mark">
               <img
@@ -197,7 +197,7 @@ class Home extends Component {
             </div>
           </div>
           <div className="image-content">
-            <img src={require("../../assets/images/responsive.jpg")} alt="" />
+            <img src={require("../../assets/images/PC.png")} alt="" />
           </div>
           <div className="card-section">
             <div className="card-section-upper">
@@ -243,7 +243,7 @@ class Home extends Component {
                 <div className="card-content">
                   <p className="color-black">
                     Capital resides on our platform acting as a single
-                    negotiatin entity.
+                    negotiating entity.
                   </p>
                   <p className="color-black">
                     This is accomplished through our global interlinked network
@@ -261,7 +261,7 @@ class Home extends Component {
                 </div>
                 <div className="card-title">
                   <p className="color-black">
-                    Deliver our meembers the best products & services for the
+                    Deliver our members the best products & services for the
                     lowest cost
                   </p>
                 </div>
@@ -319,13 +319,13 @@ class Home extends Component {
                 </div>
                 <div className="card-content">
                   <p className="color-black">
-                    Innovative fund structures & global broker-dealer network
+                    Innovative fund structures & global broker-dealer network.
                   </p>
                   <p className="color-black">
                     Fully automated private market investment technologies.
                   </p>
                   <p className="color-black">
-                    Deigital token transaction rails on distributed ledgers.
+                    Digital token transaction rails on distributed ledgers.
                   </p>
                 </div>
               </div>
@@ -367,7 +367,7 @@ class Home extends Component {
                 Industry Regulatory Authority{" "}
                 <span className="color-green">(FINRA)</span> and the Securities
                 Investor Protection Corporation (SIPC), which protects
-                securities custoers of its members up to $500,000(including
+                securities customers of its members up to $500,000(including
                 $250,000 for claims for cash). Explanatory brochures are
                 available upon request or at{" "}
                 <span className="color-green">sipc.org</span>
@@ -376,7 +376,7 @@ class Home extends Component {
                 While Empala does not mark up fees or service charges it incurs
                 in servicing clients, it does pass those fees through to the
                 client. EMPALA CHARGES A FIXED ANNUAL FEE ON EACH CLIENT'S
-                ACCOUNT. THE FEE IS COLLECTION ON A MONTHLY BASIS AS ONE TWELFTH
+                ACCOUNT. THE FEE IS COLLECTED ON A MONTHLY BASIS AS ONE TWELFTH
                 OF THE ANNUAL FEE APPLIED TO THE AVERAGE DAILY VALUE OF THE
                 ACCOUNT IN THE RESPECTIVE MONTH. THE ANNUAL FEE AT THIS TIME CAN
                 BE FOUND ON OUR{" "}
@@ -389,7 +389,7 @@ class Home extends Component {
             </div>
           </div>
           <div className="collapsible_list">
-            <Collapse_panel
+            <CollapsePanel
               header_text={"Margin"}
               content_text={
                 "Margin trading involves interest charges and risks, including\
@@ -397,7 +397,7 @@ class Home extends Component {
                 additional collateral in a falling market. Before using margin,\
                 customers must determine whether this type of trading strategy\
                 is right for them given their specific investment objectives,\
-                experience, risk tolerance, and finanical situation. For more\
+                experience, risk tolerance, and financial situation. For more\
                 information please see our Empala Margin Disclosure Statement,\
                 Empala Margin Agreement and FINRA Margin Account Risk\
                 Information. These disclosures contain information on Empala\
@@ -406,11 +406,11 @@ class Home extends Component {
               }
               is_open={true}
             />
-            <Collapse_panel
+            <CollapsePanel
               header_text={"ETFS"}
               content_text={"There is no content."}
             />
-            <Collapse_panel
+            <CollapsePanel
               header_text={"Additional Risks & Information"}
               content_text={
                 "Investors should be aware that system response, execution price, speed, liquidity, market data, and account access times are affected by many factors, including market volatility, size and type of order, market conditions, system performance, and other factors. \
