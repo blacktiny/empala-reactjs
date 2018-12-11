@@ -70,7 +70,7 @@ class Home extends Component {
             <div className="slider-content">
               <img
                 style={{ width: "100%", height: "100%" }}
-                src={require("../../assets/images/slider/slider-3.jpg")}
+                src={require("../../assets/images/slider/slider-3.png")}
                 alt=""
               />
               <div className="slider-dot" />
